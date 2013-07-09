@@ -1,10 +1,13 @@
 require "light_stalking/version"
+require "light_stalking/configuration"
 
 module LightStalking
-  def default_url_options(options={})
-    hash = {controller_name: controller_name, action_name: action_name}
-    options.merge(hash)
-  rescue => ex
-    {}
+  module_function
+  def config
+    ::LightStalking::Configuration.instance
   end
+end
+
+if defined?(Rails)
+  require 'light_stalking/rails'
 end
