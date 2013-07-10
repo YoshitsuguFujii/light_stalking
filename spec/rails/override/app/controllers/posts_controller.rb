@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  start_stalking history_number: 10
 
   # GET /posts
   # GET /posts.json
