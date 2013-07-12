@@ -7,8 +7,8 @@ module LightStalking
     attr_accessor :history_number
 
     def initialize
-      @controller_name = "before_controller"
-      @action_name     = "before_action"
+      @controller_name = "bc" # before_controller
+      @action_name     = "ba" # before_action
       @history_number  = 1
     end
 
