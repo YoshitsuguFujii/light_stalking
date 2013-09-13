@@ -1,29 +1,30 @@
-# LightStalking
+LightStalking
 
-TODO: Write a gem description
+遷移の履歴(コントローラ名とアクション名)を、getパラメータとして持ち回ります。
 
-## Installation
+##インストール
+Gemfileに書きます。railsでの使用のみを想定してます。
 
-Add this line to your application's Gemfile:
+```ruby
+gem 'light_stalking' :git => 'https://github.com/YoshitsuguFujii/light_stalking.git'
+```
 
-    gem 'light_stalking'
+##説明
+コントローラーにてクラスマクロstart_stalkingでページ遷移時に、前のコントローラ名とアクション名を保持するようになります。
+いつまで保持するかはhistory_numberで管理します。
 
-And then execute:
+```ruby
+class ApplicationController < ActionController::Base
+  start_stalking history_number: 3
+end
+```
 
-    $ bundle
+##指定可能オプション
+`start_stalking`のオプションはHashで指定します。
+指定可能なのは以下のとおりです。
 
-Or install it yourself as:
-
-    $ gem install light_stalking
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+key	| type | 説明
+:----------		|:----------    |:----------
+controller_name     | string | get値の履歴のコントローラ名を変えたいときに指定(デフォルト bc)
+action_name     | string | get値の履歴のアクション名を変えたい時に指定 (デフォルト ba)
+history_number | integer | 保持する履歴の数を指定 (デフォルト 1)
