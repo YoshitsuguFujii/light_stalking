@@ -6,7 +6,7 @@ LightStalking
 Gemfileに書きます。railsでの使用のみを想定してます。
 
 ```ruby
-gem 'light_stalking' :git => 'https://github.com/YoshitsuguFujii/light_stalking.git'
+gem 'light_stalking', :git => 'https://github.com/YoshitsuguFujii/light_stalking.git'
 ```
 
 ##説明
