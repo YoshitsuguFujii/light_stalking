@@ -27,4 +27,4 @@ key	| type | 説明
 :----------		|:----------    |:----------
 controller_name     | string | get値の履歴のコントローラ名を変えたいときに指定(デフォルト bc)
 action_name     | string | get値の履歴のアクション名を変えたい時に指定 (デフォルト ba)
-history_number | integer | 保持する履歴の数を指定 (デフォルト 1)
+history_number | integer | 保持する履歴の数を指定
